@@ -1,5 +1,8 @@
 import React from 'react';
-import './index.css'
+import './index.css';
+import logo from '../src/assets/milblock.jpeg';
+import SearchBar from './SearchBar.js'
+import Clock from './Clock';
 
 function NavBar(){
     // function btnDropdown(){
@@ -12,25 +15,19 @@ function NavBar(){
     // }
     return(
         <div className='NavBar' id='topNavbar'>
-            <a href="#home" className='logo'><img src="./Images" alt="" /></a>
-            <h1>
-                Milblock
-            </h1>
+            <div className='logo'>
+            <a href="#home" ><img src={logo} alt="" /></a>
+            </div>
             <nav>
-                <a href="#home" className='float'>Home</a>
-                <a href="#about" className='float'>About</a>
-                <a href="#contact" className='float'>Contact</a>
-                <a href='#javascript'className='icon' 
-                // onClick={btnDropdown()}
-                ><i className='fa fa-bars'></i></a>
-                {/* <button className='icon' onClick={btnDropdown()}>
-                <i className='fa fa-bars'></i>
-                </button> */}
-                    
+                <a href="#home" className=''>Home</a>
+                <a href="#about" className=''>About</a>
+                <a href="#contact" className=''>Contact</a>
+                <a href='#javascript'className='icon'><i className='fa fa-bars'></i></a>
                 
-
-                <input type="text" placeholder='Search...' className='searchbar' />
-                <button type="submit" className='searchbarButton'><i className='fa fa-search'></i></button>
+                    
+                <SearchBar />
+                <Clock />
+                
             </nav>
         </div>
     )

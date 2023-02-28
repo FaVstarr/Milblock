@@ -1,6 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+*{
+  box-sizing:border-box;
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -8,6 +12,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
 
 code {
@@ -15,9 +20,13 @@ code {
     monospace;
 }
 .NavBar{
-background: rgb(2,0,36);
-background: linear-gradient(90deg, rgb(253, 253, 253) 0%, rgba(0,212,255,1) 100%);
+ 
+background: rgb(255, 254, 255);
 overflow: hidden;
+display: flex;
+justify-content: space-between;
+align-items: center;
+position: relative;
 
 }
 h1{
@@ -64,39 +73,59 @@ h1{
 /* background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,212,255,1) 100%); */
 color: white;
 width: 50px;
-height: 42px;
+height: 48px;
 border-bottom-right-radius: 25px;
 border-top-right-radius: 25px;
 }
+.row{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+.flex-container{
+  
+ display: flex;
+ margin-bottom: 20px;
+}
 .bloggerImg img{
-  padding-left: 5px;
-  height: 100px;
-  border-top-left-radius: 25px;
-  border-bottom-left-radius: 25px;
-  border-bottom-right-radius: 25px;
-  border-top-right-radius: 25px;
+  width:100%;
 }
 .ownImg img{
-  height: 200px;
+  width: 100%;
 
 }
 .ppImg img{
-  height: 200px;
+ width: 100%;
+ margin-bottom: 10px;
 
+}
+.social-links a{
+  display: inline-block;
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 5px;
 }
 .header{
   padding: 30px;
   font-size: 40px;
 }
-.left-column{
-  display: flex;
-  flex-direction: row;
-}
-.right-column{
-  display: flex;
-  width: 25px;
-  padding-left: 60%;
+.leftcolumn{
+  width: 70%;
+  padding: 0 20px;
   
+}
+.card{
+  background-color: #f9f9f9;
+  padding: 20px;
+  margin-top: 20px;
+}
+.rightcolumn{
+  width: 30%;
+  padding: 0 20px;
 }
 .lcard{
   background-color: #f1f1f1;
@@ -104,30 +133,49 @@ border-top-right-radius: 25px;
   margin-top: 20px;
 }
 .footer{
+  background-color: #333;
+  color: #fff;
   padding: 20px;
   text-align: center;
-  background: #ddd;
-  margin-top: 20px;
+}
+.logo{
+  width: 20%;
 }
 p{
   direction: ltr;
 }
-.topNavbar .icon{
+.Navbar nav a {
   display: none;
   
 }
-@media screen and (max-width: 800px){
-  
-  .left-column, .right-column{
+
+@media screen and (max-width: 768px){
+
+  .row{
+    display: block;
+  } 
+
+  .leftcolumn, .rightcolumn{
     width: 100%;
     padding: 0;
   }
-  .searchbar{
-    width: 40%;
-    
+
+  .card, .rcard{
+    border: none;
+  margin-bottom: 16px;  }
+ }
+
+ @media screen and (max-width:480px) {
+
+  h2{
+    font-size:28px;
   }
-  .NavBar a:not(:first-child) {display: none;}
-  .NavBar a.icon{
-    flex: right;
+  .leftcolumn, .rightcolumn{
+    width: 100%;
+    padding: 0;
   }
-}
+ 
+  .NavBar.responsive {}
+  
+  
+ }

@@ -16,7 +16,7 @@ const BlogPost = () => {
             titledesc: "Title Description",
             date: "February 21, 2023",
             text: "Lorem ipsum dolor sit amet, consectetur adipis",
-            index: 1,
+            index: 2,
             img: "http://t3.gstatic.com/licensed-image?q=tbn:ANd9GcSJKyrj1M_E4zNvs1V3mfNkv13MajxmmotwGgNlb639NJVMdPgVDHv29wgH_SnTO_Ep_SPNM6vm_yslNWc"
         }
     ]
@@ -27,7 +27,7 @@ const BlogPost = () => {
         <div className='row'>
         {BlogInfo.map((elem,index) => (
             <div className="flex-container">
-                <div className='lcard'>
+                <div className='leftcolumn'>
                     <h2>{elem.title}</h2>
                     <h5>{elem.titledesc} <span>{elem.date}</span></h5>
                     <div className='bloggerImg'>
@@ -41,7 +41,7 @@ const BlogPost = () => {
             </div>
             </div>
         ))}
-            <div className=''>
+            <div className='rightcolumn'>
                 <div className='card'>
                     <h2>About Me</h2>
                     <div className='ownImg'>
@@ -58,9 +58,9 @@ const BlogPost = () => {
                     </div>
                     <h3>Follow Me </h3>
                     <div className='social-links'>
-                        <a href="#facebook">facebook</a>
-                        <a href="#instagram">instagram</a>
-                        <a href="#twitter">twitter</a>
+                        <a href="#facebook"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+                        <a href="#instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#twitter"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
                     </div>
                 </div>
                 
